@@ -22,11 +22,7 @@ export default function RootLayout({
       suppressHydrationWarning
       className={cn("antialiased", GeistSans.variable, GeistMono.variable)}
     >
-      <script
-          async
-          crossOrigin="anonymous"
-          src="https://tweakcn.com/live-preview.min.js"
-        />
+  
       <body>
         <ThemeProvider>{children}</ThemeProvider>
       </body>
