@@ -3,9 +3,12 @@
   "version": "0.0.1",
   "type": "module",
   "private": true,
+  "main": "electron/main.cjs",
   "scripts": {
     "dev": "next dev",
+    "dev:electron": "concurrently \"next dev\" \"wait-on http://localhost:3000 && electron .\"",
     "build": "next build",
+    "build:electron": "next build && electron-builder",
     "start": "next start",
     "lint": "eslint",
     "format": "prettier --write \"**/*.{ts,tsx}\"",
@@ -29,11 +32,16 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "concurrently": "^9.2.1",
+    "cross-env": "^10.1.0",
+    "electron": "^42.3.0",
+    "electron-builder": "^26.8.1",
     "eslint": "^9",
     "eslint-config-next": "16.2.6",
     "prettier": "^3.8.3",
     "prettier-plugin-tailwindcss": "^0.8.0",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^5",
+    "wait-on": "^9.0.10"
   }
 }
